@@ -1,0 +1,5 @@
+description: Accepted job
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/worker-job.yaml

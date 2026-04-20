@@ -1,0 +1,5 @@
+name: migrations
+on: [pull_request]
+jobs:
+  validate-migrations:
+    runs-on: ubuntu-latest

@@ -13,9 +13,9 @@ declare global {
       requestId?: string;
       tenantId?: string;
       user?: UserContext;
+      apiVersion?: 'v1' | 'v2';
     }
   }
 }
 
 export {};
-

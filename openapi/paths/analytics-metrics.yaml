@@ -1,0 +1,3 @@
+/analytics/metrics:
+  post:
+    summary: Query analytics metrics

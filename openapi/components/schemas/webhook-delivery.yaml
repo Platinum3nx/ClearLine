@@ -1,0 +1,6 @@
+type: object
+properties:
+  eventName:
+    type: string
+  status:
+    type: string

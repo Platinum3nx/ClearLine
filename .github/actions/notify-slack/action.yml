@@ -1,0 +1,4 @@
+name: notify-slack
+runs:
+  using: composite
+  steps: []

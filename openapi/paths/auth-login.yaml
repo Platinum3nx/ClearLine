@@ -1,0 +1,3 @@
+/auth/login:
+  post:
+    summary: Login with credentials

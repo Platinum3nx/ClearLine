@@ -1,9 +1,8 @@
 import type { Express } from 'express';
-import { buildApiRouter } from '../routes/index.js';
 import { registerTerminalMiddlewares } from './registerMiddlewares.js';
+import { registerVersionedRoutes } from './registerVersionedRoutes.js';
 
 export function registerRoutes(app: Express) {
-  app.use('/v1', buildApiRouter());
+  registerVersionedRoutes(app);
   registerTerminalMiddlewares(app);
 }
-

@@ -1,0 +1,4 @@
+name: x-api-version
+in: header
+schema:
+  type: string

@@ -1,0 +1,5 @@
+name: test-matrix
+on: [pull_request]
+jobs:
+  test-matrix:
+    runs-on: ubuntu-latest

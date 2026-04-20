@@ -1,0 +1,5 @@
+name: docker
+on: [push]
+jobs:
+  build-images:
+    runs-on: ubuntu-latest

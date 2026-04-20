@@ -1,0 +1,3 @@
+/webhooks/deliveries:
+  get:
+    summary: List webhook deliveries

@@ -6,8 +6,9 @@ ClearLine is a fictional enterprise TypeScript and Node.js backend for a B2B inv
 
 - Express and TypeScript application bootstrap
 - Feature modules for authentication, users, teams, billing, invoicing, and payments
+- Secondary platform modules for reporting, analytics, webhooks, integrations, and admin operations
 - Shared Redis-backed rate limiting middleware used across the API surface
-- Prisma schema, Docker assets, tests, and architecture docs
+- Background workers, email templates, PDF generation, Prisma schema, Docker assets, tests, and architecture docs
 
 ## Quick start
 
@@ -17,4 +18,3 @@ ClearLine is a fictional enterprise TypeScript and Node.js backend for a B2B inv
 4. Run npm run dev.
 
 The generated scaffold is meant to look production-like for demos rather than provide a complete working billing system.
-

@@ -1,0 +1,6 @@
+type: object
+properties:
+  invoiceNumber:
+    type: string
+  totalCents:
+    type: integer

@@ -66,4 +66,7 @@ export const authBurstRateLimiter = createRateLimiter({ key: 'auth-burst', max: 
 export const adminMutationRateLimiter = createRateLimiter({ key: 'admin-mutation', max: 30, windowSeconds: 60 });
 export const invoiceMutationRateLimiter = createRateLimiter({ key: 'invoice-mutation', max: 40, windowSeconds: 60 });
 export const paymentMutationRateLimiter = createRateLimiter({ key: 'payment-mutation', max: 25, windowSeconds: 60 });
-
+export const reportRunRateLimiter = createRateLimiter({ key: 'report-run', max: 15, windowSeconds: 60 });
+export const analyticsIngestRateLimiter = createRateLimiter({ key: 'analytics-ingest', max: 180, windowSeconds: 60 });
+export const integrationSyncRateLimiter = createRateLimiter({ key: 'integration-sync', max: 20, windowSeconds: 60 });
+export const webhookInboundRateLimiter = createRateLimiter({ key: 'webhook-inbound', max: 240, windowSeconds: 60 });

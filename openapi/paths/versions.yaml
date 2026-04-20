@@ -1,0 +1,3 @@
+/versions:
+  get:
+    summary: List supported API versions

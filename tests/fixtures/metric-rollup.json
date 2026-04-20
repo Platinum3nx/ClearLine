@@ -1,0 +1,9 @@
+{
+  "metricKey": "mrr",
+  "range": "30d",
+  "values": [
+    100,
+    120,
+    140
+  ]
+}

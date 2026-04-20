@@ -1,0 +1,6 @@
+type: object
+properties:
+  providerReference:
+    type: string
+  status:
+    type: string
