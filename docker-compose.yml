@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: clearline
+      POSTGRES_USER: clearline
+      POSTGRES_PASSWORD: clearline
+    ports:
+      - '5432:5432'
+  redis:
+    image: redis:7-alpine
+    ports:
+      - '6379:6379'
+

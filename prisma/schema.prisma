@@ -1,0 +1,86 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String      @id @default(uuid())
+  email         String      @unique
+  fullName      String
+  status        String
+  role          String
+  teamId        String?
+  lastLoginAt   DateTime?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  memberships   Membership[]
+}
+
+model Team {
+  id               String         @id @default(uuid())
+  name             String
+  slug             String         @unique
+  seatLimit        Int            @default(5)
+  defaultCurrency  String         @default("USD")
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  memberships      Membership[]
+  subscriptions    Subscription[]
+  invoices         Invoice[]
+}
+
+model Membership {
+  id        String   @id @default(uuid())
+  teamId    String
+  userId    String
+  title     String?
+  createdAt DateTime @default(now())
+  team      Team     @relation(fields: [teamId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Subscription {
+  id          String   @id @default(uuid())
+  teamId      String
+  planCode    String
+  status      String
+  seats       Int
+  renewalDate DateTime
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  team        Team     @relation(fields: [teamId], references: [id])
+}
+
+model Invoice {
+  id            String   @id @default(uuid())
+  teamId        String
+  ownerId       String
+  invoiceNumber String   @unique
+  status        String
+  currency      String
+  subtotalCents Int
+  taxCents      Int
+  totalCents    Int
+  dueDate       DateTime
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  team          Team     @relation(fields: [teamId], references: [id])
+}
+
+model Payment {
+  id                String   @id @default(uuid())
+  ownerId           String
+  invoiceId         String?
+  provider          String
+  providerReference String   @unique
+  status            String
+  amountCents       Int
+  currency          String
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
