@@ -1,3 +1,54 @@
 /versions:
   get:
-    summary: List supported API versions
+    summary: List supported API versions and lifecycle metadata
+    parameters:
+      - in: query
+        name: includeDeprecated
+        schema:
+          type: boolean
+          default: true
+        description: Include deprecated API versions in the catalog response.
+    responses:
+      '200':
+        description: Version catalog response
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  properties:
+                    defaultVersion:
+                      type: string
+                    recommendedVersion:
+                      type: string
+                    supportedVersions:
+                      type: array
+                      items:
+                        type: string
+                    deprecatedVersions:
+                      type: array
+                      items:
+                        type: string
+                    versions:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          version:
+                            type: string
+                          label:
+                            type: string
+                          lifecycle:
+                            type: string
+                          default:
+                            type: boolean
+                          recommended:
+                            type: boolean
+                          routePrefix:
+                            type: string
+                          releasedAt:
+                            type: string
+                          sunsetDate:
+                            type: string
